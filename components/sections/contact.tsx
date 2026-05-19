@@ -71,7 +71,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 bg-[var(--color-cream-warm)] overflow-hidden"
+      className="relative py-16 md:py-32 bg-[var(--color-cream-warm)] overflow-hidden"
     >
       <div className="container-page relative grid md:grid-cols-[1fr_1.2fr] gap-14 md:gap-20 items-start">
         <div className="md:sticky md:top-32">

@@ -16,7 +16,7 @@ export function Hero() {
         <div className="max-w-[820px]">
           <span className="kicker anim-fade-up-1">{hero.kicker}</span>
 
-          <h1 className="display mt-5 text-[clamp(1.875rem,4.6vw,3.75rem)] leading-[1.06] [text-wrap:balance] anim-fade-up-2">
+          <h1 className="display mt-5 text-[clamp(1.625rem,4.8vw,3.75rem)] leading-[1.08] [text-wrap:balance] anim-fade-up-2">
             {hero.headline.line1}
             <br />
             <span className="display-italic">{hero.headline.accent}</span>
@@ -26,10 +26,10 @@ export function Hero() {
             {hero.sub}
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 anim-fade-up-4">
+          <div className="mt-7 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-x-5 anim-fade-up-4">
             <a
               href={hero.primaryCta.href}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--color-navy)] text-[var(--color-cream)] px-6 py-3 text-[14.5px] font-medium hover:bg-[var(--color-navy-deep)] transition-all shadow-[var(--shadow-card)] hover:-translate-y-0.5"
+              className="group inline-flex items-center justify-center sm:justify-start gap-2.5 rounded-full bg-[var(--color-navy)] text-[var(--color-cream)] px-6 py-3.5 sm:py-3 text-[14.5px] font-medium hover:bg-[var(--color-navy-deep)] transition-all shadow-[var(--shadow-card)] hover:-translate-y-0.5"
             >
               {hero.primaryCta.label}
               <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>
@@ -38,7 +38,7 @@ export function Hero() {
             </a>
             <a
               href={hero.secondaryCta.href}
-              className="inline-flex items-center gap-2 px-2 py-2 text-[14.5px] font-medium text-[var(--color-navy)] underline underline-offset-[6px] decoration-[var(--color-teal)] decoration-2 hover:decoration-[var(--color-navy)] transition-colors"
+              className="inline-flex items-center justify-center sm:justify-start gap-2 px-2 py-2 text-[14.5px] font-medium text-[var(--color-navy)] underline underline-offset-[6px] decoration-[var(--color-teal)] decoration-2 hover:decoration-[var(--color-navy)] transition-colors"
             >
               {hero.secondaryCta.label}
             </a>

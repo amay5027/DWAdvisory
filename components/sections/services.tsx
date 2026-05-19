@@ -7,7 +7,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative py-24 md:py-32 bg-[var(--color-navy-deep)] text-[var(--color-cream)] overflow-hidden"
+      className="relative py-16 md:py-32 bg-[var(--color-navy-deep)] text-[var(--color-cream)] overflow-hidden"
     >
       <div className="grain" />
       <BackgroundOrnament />

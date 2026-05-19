@@ -3,7 +3,7 @@ import { SectionChapter } from "../section-chapter";
 
 export function Approach() {
   return (
-    <section id="approach" className="relative py-24 md:py-32">
+    <section id="approach" className="relative py-16 md:py-32">
       <div className="container-page grid md:grid-cols-[1fr_1.25fr] gap-12 md:gap-20 items-start">
         <div className="md:sticky md:top-32">
           <SectionChapter numeral="III" />

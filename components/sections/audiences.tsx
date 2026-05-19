@@ -5,7 +5,7 @@ const NUMERALS = ["I", "II", "III"] as const;
 
 export function Audiences() {
   return (
-    <section id="audiences" className="relative py-24 md:py-32">
+    <section id="audiences" className="relative py-16 md:py-32">
       <div className="container-page">
         <header className="max-w-3xl mb-14 md:mb-20">
           <SectionChapter numeral="I" />

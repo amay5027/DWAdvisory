@@ -4,7 +4,7 @@ import { SectionChapter } from "../section-chapter";
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-[var(--color-cream-warm)]">
+    <section id="about" className="relative py-16 md:py-32 bg-[var(--color-cream-warm)]">
       <div className="container-page grid md:grid-cols-[1fr_1.5fr] gap-14 md:gap-20 items-center">
         <div className="order-2 md:order-1">
           <PortraitPlaceholder />

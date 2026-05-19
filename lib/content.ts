@@ -137,7 +137,7 @@ export const audiences = [
   {
     title: "Start-ups & founders",
     sectorLabel: "Pre-seed → Series B",
-    body: "From first invoice to Series A. I set up the books so they survive due diligence, advise on EIS/SEIS and R&D, and tell you straight when the model isn’t working yet.",
+    body: "First invoice through Series A. Books that survive due diligence, R&D handled, a straight answer when the model isn’t working yet.",
     questions: [
       "Is our runway really 14 months?",
       "Can we claim R&D on this build?",
@@ -147,7 +147,7 @@ export const audiences = [
   {
     title: "Contractors & consultants",
     sectorLabel: "Limited-company professionals",
-    body: "Limited-company contractors and independent consultants who’d rather make decisions on a phone call than wait three weeks for an email reply.",
+    body: "Decisions made on a phone call. Not after a three-week wait for an email reply.",
     questions: [
       "Salary, dividend or pension this year?",
       "Am I inside or outside IR35 on this contract?",
@@ -157,7 +157,7 @@ export const audiences = [
   {
     title: "Established SMEs",
     sectorLabel: "£250k → £10m turnover",
-    body: "Owner-managed businesses who’ve outgrown their original accountant and want a real advisor, not just a year-end checkbox.",
+    body: "You’ve outgrown your original accountant. You want a real advisor, not just a year-end checkbox.",
     questions: [
       "Where is margin actually being lost?",
       "Can we afford the next two hires?",

@@ -3,7 +3,7 @@ import { SectionChapter } from "../section-chapter";
 
 export function Testimonials() {
   return (
-    <section className="relative py-24 md:py-32 bg-white">
+    <section className="relative py-16 md:py-32 bg-white">
       <div className="container-page">
         <header className="max-w-2xl">
           <SectionChapter numeral="IV" />
@@ -14,12 +14,13 @@ export function Testimonials() {
           </h2>
         </header>
 
-        <div className="mt-14 md:mt-20 grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="mt-12 md:mt-20 relative -mx-6 md:mx-0">
+          <div className="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-5 md:gap-8 px-6 md:px-0 pb-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {testimonials.map((t, i) => (
             <figure
               key={t.role + t.org}
               className={[
-                "relative p-7 md:p-8 rounded-3xl flex flex-col",
+                "relative p-7 md:p-8 rounded-3xl flex flex-col snap-center md:snap-align-none shrink-0 w-[85vw] sm:w-[60vw] md:w-auto",
                 i === 1
                   ? "bg-[var(--color-navy)] text-white md:translate-y-6"
                   : "bg-[var(--color-cream)] ring-1 ring-[var(--color-line)] text-[var(--color-ink)]",
@@ -61,6 +62,20 @@ export function Testimonials() {
               </figcaption>
             </figure>
           ))}
+          </div>
+          {/* Mobile pagination dots */}
+          <div className="md:hidden flex items-center justify-center gap-2 mt-6">
+            {testimonials.map((_, i) => (
+              <span
+                key={i}
+                aria-hidden
+                className="w-1.5 h-1.5 rounded-full bg-[var(--color-navy)]/20 first:bg-[var(--color-teal)]"
+              />
+            ))}
+            <span className="ml-3 text-[11px] tracking-[0.18em] uppercase text-[var(--color-ink-muted)]">
+              Swipe
+            </span>
+          </div>
         </div>
 
         <p className="mt-10 text-center text-[11.5px] tracking-[0.04em] text-[var(--color-ink-muted)] max-w-xl mx-auto">

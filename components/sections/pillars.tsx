@@ -5,7 +5,7 @@ const NUMERALS = ["I", "II", "III"] as const;
 
 export function Pillars() {
   return (
-    <section className="relative py-24 md:py-32 bg-white border-y border-[var(--color-line)] overflow-hidden">
+    <section className="relative py-16 md:py-32 bg-white border-y border-[var(--color-line)] overflow-hidden">
       <BackgroundOrnament />
 
       <div className="container-page relative">
@@ -21,18 +21,35 @@ export function Pillars() {
           </p>
         </div>
 
-        {/* Three pillars — open editorial layout, no card boxes */}
-        <div className="mt-16 md:mt-24 grid md:grid-cols-3 relative">
-          {pillars.map((p, i) => (
-            <Pillar
-              key={p.title}
-              numeral={NUMERALS[i]}
-              title={p.title}
-              body={p.body}
-              tagline={p.tagline}
-              index={i}
-            />
-          ))}
+        {/* Mobile: horizontal scroll-snap carousel. Desktop: editorial 3-up grid. */}
+        <div className="mt-12 md:mt-24 relative -mx-6 md:mx-0">
+          <div
+            className="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-5 md:gap-0 px-6 md:px-0 pb-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {pillars.map((p, i) => (
+              <Pillar
+                key={p.title}
+                numeral={NUMERALS[i]}
+                title={p.title}
+                body={p.body}
+                tagline={p.tagline}
+                index={i}
+              />
+            ))}
+          </div>
+          {/* Mobile pagination dots */}
+          <div className="md:hidden flex items-center justify-center gap-2 mt-6">
+            {pillars.map((_, i) => (
+              <span
+                key={i}
+                aria-hidden
+                className="w-1.5 h-1.5 rounded-full bg-[var(--color-navy)]/20 first:bg-[var(--color-teal)]"
+              />
+            ))}
+            <span className="ml-3 text-[11px] tracking-[0.18em] uppercase text-[var(--color-ink-muted)]">
+              Swipe
+            </span>
+          </div>
         </div>
       </div>
     </section>
@@ -55,9 +72,10 @@ function Pillar({
   return (
     <article
       className={[
-        "group relative px-0 md:px-8 py-10 md:py-2 flex flex-col",
-        // Vertical separators on desktop, horizontal on mobile
-        index > 0 ? "md:border-l border-[var(--color-line)] border-t md:border-t-0" : "",
+        "group relative flex flex-col snap-center md:snap-align-none shrink-0",
+        // Mobile: full-width-ish card with ring; Desktop: open column with left border
+        "w-[85vw] sm:w-[60vw] md:w-auto p-6 md:p-0 md:px-8 md:py-2 rounded-3xl md:rounded-none ring-1 ring-[var(--color-line)] md:ring-0 bg-white md:bg-transparent",
+        index > 0 ? "md:border-l border-[var(--color-line)]" : "",
       ].join(" ")}
     >
       <header className="flex items-baseline gap-4">

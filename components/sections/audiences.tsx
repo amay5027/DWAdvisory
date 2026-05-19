@@ -8,7 +8,7 @@ export function Audiences() {
     <section id="audiences" className="relative py-24 md:py-32">
       <div className="container-page">
         <header className="max-w-3xl mb-14 md:mb-20">
-          <SectionChapter numeral="III" />
+          <SectionChapter numeral="I" />
           <span className="kicker">{audiencesIntro.kicker}</span>
           <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.06] [text-wrap:balance]">
             {audiencesIntro.heading.pre}

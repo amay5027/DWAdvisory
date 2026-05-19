@@ -17,11 +17,11 @@ export default function HomePage() {
       <main>
         <Hero />
         <Reveal><Pillars /></Reveal>
-        <Reveal><Approach /></Reveal>
-        <Reveal fadeOnly><Services /></Reveal>
         <Reveal><Audiences /></Reveal>
         <Reveal><About /></Reveal>
+        <Reveal><Approach /></Reveal>
         <Reveal><Testimonials /></Reveal>
+        <Reveal fadeOnly><Services /></Reveal>
         <Reveal><Contact /></Reveal>
       </main>
       <SiteFooter />

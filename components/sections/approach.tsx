@@ -6,7 +6,7 @@ export function Approach() {
     <section id="approach" className="relative py-24 md:py-32">
       <div className="container-page grid md:grid-cols-[1fr_1.25fr] gap-12 md:gap-20 items-start">
         <div className="md:sticky md:top-32">
-          <SectionChapter numeral="I" />
+          <SectionChapter numeral="III" />
           <span className="kicker">{approach.kicker}</span>
           <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.25rem)]">
             {approach.heading.pre}

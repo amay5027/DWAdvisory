@@ -21,10 +21,10 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Approach", href: "#approach" },
-  { label: "Services", href: "#services" },
   { label: "Who I work with", href: "#audiences" },
   { label: "About", href: "#about" },
+  { label: "Approach", href: "#approach" },
+  { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ] as const;
 

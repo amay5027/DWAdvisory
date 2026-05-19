@@ -14,7 +14,7 @@ export function Services() {
 
       <div className="container-page relative">
         <header className="max-w-3xl">
-          <SectionChapter numeral="II" tone="dark" />
+          <SectionChapter numeral="V" tone="dark" />
           <span className="kicker" style={{ color: "var(--color-teal-300)" }}>
             What I do
           </span>

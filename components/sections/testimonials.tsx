@@ -6,7 +6,7 @@ export function Testimonials() {
     <section className="relative py-24 md:py-32 bg-white">
       <div className="container-page">
         <header className="max-w-2xl">
-          <SectionChapter numeral="V" />
+          <SectionChapter numeral="IV" />
           <span className="kicker">{testimonialsIntro.kicker}</span>
           <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.25rem)] leading-[1.06] [text-wrap:balance]">
             {testimonialsIntro.heading.pre}

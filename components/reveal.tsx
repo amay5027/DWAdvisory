@@ -44,6 +44,7 @@ export function Reveal({ children, delay = 0, className = "", fadeOnly, as = "di
   return (
     <Tag
       ref={ref as never}
+      data-revealed={visible ? "true" : "false"}
       className={[
         "transition-all ease-[cubic-bezier(0.2,0.7,0.2,1)] duration-[900ms] will-change-transform",
         visible

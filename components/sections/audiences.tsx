@@ -25,6 +25,7 @@ export function Audiences() {
               sectorLabel={aud.sectorLabel}
               body={aud.body}
               questions={aud.questions}
+              index={i}
             />
           ))}
         </div>
@@ -39,15 +40,20 @@ function AudienceRow({
   sectorLabel,
   body,
   questions,
+  index,
 }: {
   numeral: string;
   title: string;
   sectorLabel: string;
   body: string;
   questions: readonly string[];
+  index: number;
 }) {
   return (
-    <article className="group relative border-b border-[var(--color-line)]">
+    <article
+      style={{ "--i": index } as React.CSSProperties}
+      className="stagger-item group relative border-b border-[var(--color-line)]"
+    >
       <div className="grid md:grid-cols-[80px_1fr_1fr] gap-y-6 md:gap-x-12 lg:gap-x-20 py-12 md:py-16">
         {/* Numeral column */}
         <div className="flex md:block items-baseline gap-4">

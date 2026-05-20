@@ -8,7 +8,7 @@ export function Approach() {
         <div className="md:sticky md:top-32">
           <SectionChapter numeral="III" />
           <span className="kicker">{approach.kicker}</span>
-          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.25rem)]">
+          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.06] [text-wrap:balance]">
             {approach.heading.pre}
             <span className="display-italic">{approach.heading.accent}</span>
             {approach.heading.post}

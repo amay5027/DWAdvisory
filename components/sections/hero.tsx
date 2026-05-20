@@ -121,22 +121,107 @@ function BackgroundOrnament() {
             "radial-gradient(closest-side, var(--color-navy) 0%, transparent 70%)",
         }}
       />
-      <div
-        aria-hidden
-        className="hidden md:block absolute top-1 right-2 select-none pointer-events-none"
-      >
-        <div
-          className="font-display italic leading-none"
-          style={{
-            fontSize: "clamp(7rem, 14vw, 13rem)",
-            color: "var(--color-navy)",
-            opacity: 0.045,
-            letterSpacing: "-0.05em",
-          }}
-        >
-          dw.
-        </div>
-      </div>
+      <HeroAnimation />
     </>
+  );
+}
+
+/**
+ * Three diamonds float into the brand's signature trio formation on page
+ * load, then a slow concentric ripple emanates from the centre.
+ * Things come together, and stay calm.
+ */
+function HeroAnimation() {
+  const NAVY = "#002066";
+  const TEAL = "#0088a8";
+
+  // Brand formation: top diamond, bottom-left, bottom-right (teal accent).
+  // Anchored just off-centre, biased to the right so it sits behind the
+  // hero's empty right-hand column on desktop without obscuring the
+  // headline on mobile.
+  return (
+    <div
+      aria-hidden
+      className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden"
+    >
+      <svg
+        viewBox="0 0 600 480"
+        className="w-[140%] sm:w-[100%] max-w-[820px] -mr-12 sm:-mr-20 md:-mr-32 lg:-mr-44"
+        style={{ filter: "blur(0.2px)" }}
+      >
+        {/* Ripples — rendered first so diamonds overlap them.
+            Group opacity 0.32 keeps the peak visible without being garish. */}
+        <g style={{ opacity: 0.32 }}>
+          <circle
+            cx="300"
+            cy="240"
+            r="80"
+            fill="none"
+            stroke={TEAL}
+            strokeWidth="2.5"
+            className="hero-ripple hero-ripple-1"
+          />
+          <circle
+            cx="300"
+            cy="240"
+            r="80"
+            fill="none"
+            stroke={TEAL}
+            strokeWidth="2.5"
+            className="hero-ripple hero-ripple-2"
+          />
+          <circle
+            cx="300"
+            cy="240"
+            r="80"
+            fill="none"
+            stroke={TEAL}
+            strokeWidth="2.5"
+            className="hero-ripple hero-ripple-3"
+          />
+        </g>
+
+        {/* Diamond trio — formation matches the brand mark. Atmospheric
+            opacity so it sits behind the headline without competing. */}
+        <g style={{ opacity: 0.16 }}>
+          {/* Top diamond (navy) */}
+          <rect
+            x="270"
+            y="120"
+            width="60"
+            height="60"
+            transform="rotate(45 300 150)"
+            fill="none"
+            stroke={NAVY}
+            strokeWidth="10"
+            className="hero-diamond hero-diamond-top"
+          />
+          {/* Bottom-left diamond (navy) */}
+          <rect
+            x="200"
+            y="220"
+            width="60"
+            height="60"
+            transform="rotate(45 230 250)"
+            fill="none"
+            stroke={NAVY}
+            strokeWidth="10"
+            className="hero-diamond hero-diamond-left"
+          />
+          {/* Bottom-right diamond (teal — the brand's signature accent) */}
+          <rect
+            x="340"
+            y="220"
+            width="60"
+            height="60"
+            transform="rotate(45 370 250)"
+            fill="none"
+            stroke={TEAL}
+            strokeWidth="10"
+            className="hero-diamond hero-diamond-right"
+          />
+        </g>
+      </svg>
+    </div>
   );
 }

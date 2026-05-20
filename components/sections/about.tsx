@@ -13,7 +13,7 @@ export function About() {
         <div className="order-1 md:order-2">
           <SectionChapter numeral="II" />
           <span className="kicker">{about.kicker}</span>
-          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.25rem)]">
+          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.06] [text-wrap:balance]">
             {about.heading}
           </h2>
 

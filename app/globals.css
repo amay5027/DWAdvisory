@@ -118,6 +118,31 @@
   100% { background-position: 200% 0; }
 }
 
+/* Hero: three diamonds float in from spread-out positions and lock into
+   the brand's signature trio formation. One-time on page load. */
+@keyframes hero-diamond-top {
+  from { opacity: 0; transform: translateY(-44px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-diamond-left {
+  from { opacity: 0; transform: translate(-40px, 28px); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes hero-diamond-right {
+  from { opacity: 0; transform: translate(40px, 28px); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+
+/* Hero: perpetual ripple emanating from the centre of the diamond trio.
+   Symbolises calm water / peace of mind. Three offset ripples create a
+   continuous emanation. */
+@keyframes hero-ripple {
+  0%   { transform: scale(0.35); opacity: 0; }
+  18%  { opacity: 0.55; }
+  85%  { opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
 @layer utilities {
   .anim-drift-1 { animation: drift-y 9s ease-in-out infinite; }
   .anim-drift-2 { animation: drift-y-2 11s ease-in-out infinite; }
@@ -128,6 +153,48 @@
   .anim-fade-up-3 { animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 280ms both; }
   .anim-fade-up-4 { animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 400ms both; }
   .anim-fade-up-5 { animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 520ms both; }
+
+  /* Hero diamond assembly: each diamond floats in to its final position
+     with a stagger. transform-box ensures rotation/translate originate
+     from the rect's centre, not the SVG viewport origin. */
+  .hero-diamond {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation-duration: 1.4s;
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+    animation-fill-mode: both;
+  }
+  .hero-diamond-top   { animation-name: hero-diamond-top;   animation-delay: 350ms; }
+  .hero-diamond-left  { animation-name: hero-diamond-left;  animation-delay: 520ms; }
+  .hero-diamond-right { animation-name: hero-diamond-right; animation-delay: 690ms; }
+
+  /* Hero ripple: three circles, each looping every 6s, staggered by 2s
+     so a new ripple emanates outward every couple of seconds. Stays at
+     opacity 0 by default so nothing flashes before the first ripple. */
+  .hero-ripple {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+    animation: hero-ripple 6s ease-out infinite;
+  }
+  .hero-ripple-1 { animation-delay: 2200ms; }
+  .hero-ripple-2 { animation-delay: 4200ms; }
+  .hero-ripple-3 { animation-delay: 6200ms; }
+
+  /* Card-stagger cascade: each `.stagger-item` is hidden when its ancestor
+     Reveal is unrevealed, then transitions back to visible (with its own
+     delay) once the Reveal flips to revealed. Default is visible so no-JS
+     viewers and SSR-only frames still see the content. */
+  .stagger-item {
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+  [data-revealed="false"] .stagger-item {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
   .container-page {
     width: 100%;

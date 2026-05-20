@@ -71,8 +71,9 @@ function Pillar({
 }) {
   return (
     <article
+      style={{ "--i": index } as React.CSSProperties}
       className={[
-        "group relative flex flex-col snap-center md:snap-align-none shrink-0",
+        "stagger-item group relative flex flex-col snap-center md:snap-align-none shrink-0",
         // Mobile: full-width-ish card with ring; Desktop: open column with left border
         "w-[85vw] sm:w-[60vw] md:w-auto p-6 md:p-0 md:px-8 md:py-2 rounded-3xl md:rounded-none ring-1 ring-[var(--color-line)] md:ring-0 bg-white md:bg-transparent",
         index > 0 ? "md:border-l border-[var(--color-line)]" : "",

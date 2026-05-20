@@ -8,7 +8,7 @@ export function Testimonials() {
         <header className="max-w-2xl">
           <SectionChapter numeral="IV" />
           <span className="kicker">{testimonialsIntro.kicker}</span>
-          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.25rem)] leading-[1.06] [text-wrap:balance]">
+          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.06] [text-wrap:balance]">
             {testimonialsIntro.heading.pre}
             <span className="display-italic">{testimonialsIntro.heading.accent}</span>
           </h2>
@@ -19,8 +19,9 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <figure
               key={t.role + t.org}
+              style={{ "--i": i } as React.CSSProperties}
               className={[
-                "relative p-7 md:p-8 rounded-3xl flex flex-col snap-center md:snap-align-none shrink-0 w-[85vw] sm:w-[60vw] md:w-auto",
+                "stagger-item relative p-7 md:p-8 rounded-3xl flex flex-col snap-center md:snap-align-none shrink-0 w-[85vw] sm:w-[60vw] md:w-auto",
                 i === 1
                   ? "bg-[var(--color-navy)] text-white md:translate-y-6"
                   : "bg-[var(--color-cream)] ring-1 ring-[var(--color-line)] text-[var(--color-ink)]",

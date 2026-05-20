@@ -77,7 +77,7 @@ export function Contact() {
         <div className="md:sticky md:top-32">
           <SectionChapter numeral="VI" />
           <span className="kicker">{contact.kicker}</span>
-          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.25rem)]">
+          <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.06] [text-wrap:balance]">
             {contact.heading.pre}
             <span className="display-italic">{contact.heading.accent}</span>
             {contact.heading.post}

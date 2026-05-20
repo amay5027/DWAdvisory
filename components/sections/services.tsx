@@ -41,6 +41,7 @@ export function Services() {
               title={svc.title}
               description={svc.description}
               items={svc.items}
+              index={i}
             />
           ))}
         </div>
@@ -54,14 +55,19 @@ function ServiceRow({
   title,
   description,
   items,
+  index,
 }: {
   numeral: string;
   title: string;
   description: string;
   items: readonly string[];
+  index: number;
 }) {
   return (
-    <article className="group relative border-b border-white/10">
+    <article
+      style={{ "--i": index } as React.CSSProperties}
+      className="stagger-item group relative border-b border-white/10"
+    >
       <div className="grid md:grid-cols-[1fr_1.5fr] gap-y-8 md:gap-x-16 lg:gap-x-24 py-12 md:py-16">
         {/* Left column: numeral + title + intro */}
         <div>

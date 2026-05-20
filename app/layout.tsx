@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
+import { ScrollProgress } from "@/components/scroll-progress";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -57,7 +58,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-GB" className={`${GeistSans.variable} ${instrumentSerif.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ScrollProgress />
+        {children}
+      </body>
     </html>
   );
 }
